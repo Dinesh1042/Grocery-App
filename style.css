@@ -1,0 +1,271 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap");
+
+* {
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box;
+  font-family: "poppins";
+}
+body {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: aliceblue;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  border-radius: 8px;
+  height: 400px;
+  width: 70%;
+  max-width: 600px;
+  overflow: hidden;
+  padding-bottom: 5px;
+  position: relative;
+}
+.container header {
+  width: 100%;
+  text-align: center;
+  margin-top: 25px;
+}
+.popupCont {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#popup {
+  padding: 5px 15px;
+  font-size: 12px;
+  border-radius: 5px;
+  color: #fff;
+  background-color: green;
+  position: absolute;
+}
+form {
+  width: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* background-color: saddlebrown; */
+  margin: 0 auto;
+  margin-top: 10px;
+  border-radius: 6px;
+  overflow: hidden;
+  border: none;
+  background-color: rgb(201, 225, 247);
+  height: 40px;
+}
+form input {
+  width: 75%;
+  padding: 7px 7px;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  padding-left: 5px;
+  text-transform: capitalize;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#square {
+  height: 13px;
+  width: 13px;
+  margin-left: 6px;
+  transform: translateX(-30px);
+  width: 0;
+  transition: 0.3s ease-in-out all;
+  /* transitition for all is to move the input container */
+  color: rgb(120, 189, 212);
+}
+form:focus-within #square {
+  transform: translateX(0px);
+  width: 13px;
+}
+form button {
+  height: 100%;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 0 5px;
+  background-color: rgb(127, 181, 199);
+
+  transition: 0.3s ease background-color;
+}
+button:hover {
+  background-color: rgb(116, 168, 187);
+}
+.groceryList {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+}
+.groceryList p {
+  font-size: 13px;
+}
+.itemsCont {
+  margin: 0% auto;
+  width: 98%;
+  overflow-y: auto;
+  height: 295px;
+  overflow-x: hidden;
+}
+.itemsCont ul {
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 85%;
+  margin: 0 auto;
+  padding-top: 0;
+}
+.itemsCont ul li {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 10px;
+  margin: 7px;
+  background-color: lightblue;
+  border-radius: 6px;
+  transition: 0.3s ease;
+  transition-property: transform, box-shadow;
+  padding-right: 15px;
+  animation: liremove 1s ease infinite;
+}
+.itemsCont::-webkit-scrollbar {
+  width: 5px;
+  background-color: lightblue;
+}
+.itemsCont::-webkit-scrollbar-thumb {
+  background-color: rgb(114, 161, 177);
+  border-radius: 999px;
+}
+ul li .icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+ul li button {
+  margin: 0 10px;
+  margin-right: 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+ul li button ion-icon {
+  transform: scale(1.4);
+}
+ul li button:hover {
+  background-color: transparent;
+  transform: scale(1.1);
+}
+ul li button:active {
+  background-color: transparent;
+  transform: scale(1);
+}
+ul li .deleteBtn {
+  color: crimson;
+}
+ul li .deleteBtn:hover {
+  color: rgb(197, 72, 97);
+}
+ul li .deleteBtn:active {
+  color: crimson;
+}
+ul li .editBtn {
+  color: green;
+}
+ul li .editBtn:active {
+  color: rgb(48, 156, 48);
+}
+ul li .editBtn:active {
+  color: green;
+}
+ul li:hover {
+  transform: scale(1.03);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+}
+ul li p {
+  text-transform: capitalize;
+}
+
+#popup.add {
+  background-color: rgb(3, 150, 3);
+}
+#popup.remove {
+  background-color: crimson;
+}
+
+@keyframes popup {
+  0% {
+    opacity: 1;
+  }
+  40% {
+    opacity: 1;
+    filter: blur(0);
+  }
+  100% {
+    filter: blur(10px);
+    opacity: 0;
+  }
+}
+#emptyimg {
+  width: 300px;
+  height: 200px;
+  margin: 0 auto;
+  object-fit: cover;
+  transform: translateX(-30px);
+}
+
+@media (max-width: 550px) {
+  form {
+    display: flex;
+  }
+  form input {
+    width: 65%;
+  }
+  ul #emptyimg {
+    transform: translateX(-60px);
+  }
+}
+@media (max-width: 550px) {
+  form {
+    display: flex;
+    height: 35px;
+  }
+  form input {
+    width: 65%;
+  }
+  ul #emptyimg {
+    transform: translateX(-60px);
+  }
+}
+@media (max-width: 400px) {
+  form {
+    display: flex;
+  }
+  form input {
+    width: 55%;
+    font-size: 12px;
+  }
+  form button {
+    font-size: 12px;
+  }
+  ul #emptyimg {
+    transform: translateX(-80px);
+  }
+}
