@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Grocery App</title>
+    <script src="https://unpkg.com/ionicons@5.2.3/dist/ionicons.js"></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="popupCont" id="popupCont"></div>
+      <header>
+        <h1>Grocery App</h1>
+      </header>
+      <form id="form">
+        <ion-icon name="square" id="square"></ion-icon>
+        <input
+          type="text"
+          name="text"
+          id="inputText"
+          autocomplete="off"
+          placeholder="Eg: onion.."
+        />
+        <button id="submitBtn" type="submit">Add Item</button>
+      </form>
+      <div class="groceryList">
+        <p>Grocery Lists</p>
+      </div>
+      <div class="itemsCont">
+        <ul class="items" id="items">
+          <img draggable="false" id="emptyimg" src="./img.jpg" alt="" />
+        </ul>
+      </div>
+    </div>
+    <script src="./script.js"></script>
+  </body>
+</html>
