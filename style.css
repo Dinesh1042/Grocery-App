@@ -137,8 +137,8 @@ button:hover {
   margin: 7px;
   background-color: lightblue;
   border-radius: 6px;
-  transition: 0.3s ease;
-  transition-property: transform, box-shadow;
+  /* transition: 0.3s ease; */
+  /* transition-property: transform, box-shadow; */
   padding-right: 15px;
   animation: liremove 1s ease infinite;
 }

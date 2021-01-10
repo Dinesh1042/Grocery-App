@@ -157,11 +157,14 @@ window.addEventListener("keydown", (e) => {
   inputTextEl.focus();
 });
 
+let array = ["sor", "sort", "sortge"];
 
+console.log(
+  array.filter((items) => {
+    return items == "so";
+  })
+);
 
-let array = ["sor","sort","sortge"];
-
-
-console.log(array.filter((items)=>{
- return items == "so"
-}));
+new Sortable(ulEl, {
+  animation: 400,
+});
