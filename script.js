@@ -6,6 +6,8 @@ const popupCont = document.getElementById("popupCont");
 const imgEl = document.getElementById("emptyimg");
 const listCountEl = document.getElementById("listCount");
 
+const squareEl = document.getElementById("square");
+
 let editFlag = false;
 let editValue = "";
 let editElem = "";
@@ -43,9 +45,11 @@ function addGrocery() {
     popup("Grocery input cannot be empty value", "remove");
     formEl.style.backgroundColor = `rgba(220, 20, 60, 0.356)`;
     submitBtnEl.style.background = "rgba(220, 20, 60, 0.712)";
+    squareEl.style.color = "crimson";
     setTimeout(() => {
       formEl.style.backgroundColor = `rgb(201, 225, 247)`;
       submitBtnEl.style.background = "rgb(127, 181, 199)";
+      squareEl.style.color = "rgb(120, 189, 212)";
     }, 1000);
   }
 }
@@ -158,14 +162,6 @@ function popup(value, action) {
 window.addEventListener("keydown", (e) => {
   inputTextEl.focus();
 });
-
-let array = ["sor", "sort", "sortge"];
-
-console.log(
-  array.filter((items) => {
-    return items == "so";
-  })
-);
 
 function numberOfItems() {
   listCountEl.innerHTML = ulEl.childElementCount - 1;
