@@ -4,6 +4,7 @@ const ulEl = document.getElementById("items");
 const submitBtnEl = document.getElementById("submitBtn");
 const popupCont = document.getElementById("popupCont");
 const imgEl = document.getElementById("emptyimg");
+const listCountEl = document.getElementById("listCount");
 
 let editFlag = false;
 let editValue = "";
@@ -24,6 +25,7 @@ function addGrocery() {
     setLocal(inputTextEl.value, elemId);
     popup(inputTextEl.value + " has been added", "add");
     inputTextEl.value = "";
+    numberOfItems();
   } else if (
     inputTextEl.value &&
     editFlag &&
@@ -68,7 +70,7 @@ function createGrocery(value, id) {
   name="trash"></ion-icon>`;
   icon.appendChild(editBtn);
   icon.appendChild(deleteBtn);
-
+  numberOfItems();
   liEl.appendChild(icon);
   ulEl.prepend(liEl);
 
@@ -77,7 +79,7 @@ function createGrocery(value, id) {
     currentEl.remove();
     removeLocal(currentEl.dataset.id);
     popup("Item has been deleted", "remove");
-
+    numberOfItems();
     let local = getLocal();
 
     if (local.length === 0) {
@@ -165,6 +167,12 @@ console.log(
   })
 );
 
+function numberOfItems() {
+  listCountEl.innerHTML = ulEl.childElementCount - 1;
+}
+
 new Sortable(ulEl, {
   animation: 400,
 });
+
+numberOfItems();
