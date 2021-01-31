@@ -37,7 +37,6 @@ function addGrocery() {
     editElem.innerHTML = currentValue;
     editFlag = false;
     inputTextEl.value = "";
-    console.log(editId);
     submitBtnEl.innerText = "Add Item";
     popup("Item has been edited", "add");
     editLocal(editId, currentValue);

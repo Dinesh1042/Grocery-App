@@ -46,15 +46,15 @@ body {
   font-size: 12px;
   border-radius: 5px;
   color: #fff;
-  background-color: green;
+  background-color: lightgreen;
   position: absolute;
+  margin-top: 10px;
 }
 form {
   width: 80%;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  /* background-color: saddlebrown; */
   margin: 0 auto;
   margin-top: 10px;
   border-radius: 6px;
@@ -96,7 +96,6 @@ form button {
   cursor: pointer;
   padding: 0 5px;
   background-color: rgb(127, 181, 199);
-
   transition: 0.3s ease background-color;
 }
 button:hover {
@@ -140,8 +139,6 @@ button:hover {
   margin: 7px;
   background-color: lightblue;
   border-radius: 6px;
-  /* transition: 0.3s ease; */
-  /* transition-property: transform, box-shadow; */
   padding-right: 15px;
   animation: liremove 1s ease infinite;
 }
@@ -205,9 +202,8 @@ ul li:hover {
 ul li p {
   text-transform: capitalize;
 }
-
 #popup.add {
-  background-color: rgb(3, 150, 3);
+  background-color: lightgreen;
 }
 #popup.remove {
   background-color: crimson;
